@@ -64,7 +64,7 @@ function withdraw() {
     }
     
     if (amount > balance) {
-        showMessage('Insufficient funds', 'error');
+        showMessage('Insufficient funds "GARIB"', 'error');
         return;
     }
     
