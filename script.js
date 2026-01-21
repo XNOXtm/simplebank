@@ -9,7 +9,7 @@ const messageElement = document.getElementById('message');
 const transactionList = document.getElementById('transactionList');
 
 function updateBalance() {
-    balanceElement.textContent = `$${balance.toFixed(2)}`;
+    balanceElement.textContent = `₹${balance.toFixed(2)}`;
 }
 
 function showMessage(text, type) {
@@ -33,7 +33,7 @@ function updateTransactionHistory() {
         const li = document.createElement('li');
         li.className = `transaction-${transaction.type}`;
         li.innerHTML = `
-            <span>${transaction.type === 'deposit' ? '+' : '-'} $${transaction.amount.toFixed(2)}</span>
+            <span>${transaction.type === 'deposit' ? '+' : '-'} ₹${transaction.amount.toFixed(2)}</span>
             <span>${transaction.date}</span>
         `;
         transactionList.appendChild(li);
@@ -51,7 +51,7 @@ function deposit() {
     balance += amount;
     updateBalance();
     addTransaction('deposit', amount);
-    showMessage(`Successfully deposited $${amount.toFixed(2)}`, 'success');
+    showMessage(`Successfully deposited ₹${amount.toFixed(2)}`, 'success');
     amountInput.value = '';
 }
 
@@ -71,7 +71,7 @@ function withdraw() {
     balance -= amount;
     updateBalance();
     addTransaction('withdraw', amount);
-    showMessage(`Successfully withdrawn $${amount.toFixed(2)}`, 'success');
+    showMessage(`Successfully withdrawn ₹${amount.toFixed(2)}`, 'success');
     amountInput.value = '';
 }
 
